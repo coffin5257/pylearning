@@ -1,0 +1,6 @@
+this is test. 
+this is test.
+t h i s   i s   t e s t .
+<type 'str'>
+['t', 'h', 'i', 's', 'i', 's', 't', 'e', 's', 't', '.']
+this is anything study.
