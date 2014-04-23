@@ -1,158 +1,206 @@
-My Blog ：[灵柩里的人][1]
-==================================
-##第一题：python中有几种注释方法
+Lesson 1  附加题
+===============================
+#### My Blog：[灵柩里的人][1]
+
+ [1]: http:www.coffin5257.com
+
+**一、python中有几种注释，分别是干什么用的**
 ```python
-print 'http://www.coffin5257.com'
-#Commented
-'''Commented
-Commented
-'''
+#注释单行
+/*
+ *注释代码块
+ */
 ```
-##第二题：判断以下几个变量是否合法
+**二、说出变量的定义法则并写一个变量**
+开头仅以 _ 或 字母(包括大小写)，变量名大小写敏感。
+
+**三、判断下面的语句是否正确如果正确请写出答案，如果错误请改正后写出运算结果**
 ```python
-1a #error
-$a #error
-_b #correct 
-a  #correct
-```
-##第三题：对于字符型，我是否可以全部转换为整型，请回答并给与原因
-只含数字的可以，带其它字符的直接转换会报错。
-##第四题：
-`a='this is test. '`
-第一小步，请去掉右边的空格，保存到变量b里面
-第二小步，对b用空格进行切分，保存到c
-第三小步，判断c是什么数据类型类型，并打印出c的个个值
-第四小步，对a替换成'this is anying study.'
-```python
-#!/user/bin/env python
-a = 'this is test. '
-print a
-b = a.strip()
-print b
-c = ' '.join(b)
+(1)
+$a=123
+print $a
+#error 变量名去掉$ 输出123
+(2)
+c='123+ABC'
 print c
-print type(c)
-print c.split()
-a = 'this is anything study.'
+#correct 输出123+ABC
+(3)
+b='A'+'B'
+print b
+#correct 输出AB
+(4)
+A='123+456'
 print a
-```
-```shell
-#Result
-this is test. 
-this is test.
-t h i s   i s   t e s t .
-<type 'str'>
-['t', 'h', 'i', 's', 'i', 's', 't', 'e', 's', 't', '.']
-this is anything study.
-```
-
-##第五题，定义了一个变量名为 port 的列表，我想在里面依次添加22、80、23、8080、139、445、3389，然后进行正向（sort）排序，然后打印每个数值
-```python
-#!/user/bin/env python
-port = []
-print port
-port.append(22)
-print port
-port.append(80)
-print port
-port.append(23)
-print port
-port.append(8080)
-print port
-port.append(139)
-print port
-port.append(445)
-print port
-port.append(3389)
-print port
-port.sort()
-print port
-```
-```shell
-#Result
-[]
-[22]
-[22, 80]
-[22, 80, 23]
-[22, 80, 23, 8080]
-[22, 80, 23, 8080, 139]
-[22, 80, 23, 8080, 139, 445]
-[22, 80, 23, 8080, 139, 445, 3389]
-[22, 23, 80, 139, 445, 3389, 8080]
-```
-##第六题，写一个if语句，如果变量a小于5，则输出this is a fun，如果a小于10则输出this is a joke，如果a小于20则输出this is a test，如果都不成立，则输出this is last
-```python
-#!/user/bin/env python
-a = input()
-if a<5:
-	print 'this is a fun'
-elif a<10:
-	print 'this is a joke'
-elif a<20:
-	print 'this is a test'
+#error 两个变量名统一 输出123+456
+(5)
+B=true+1
+print B
+#error:name 'true' is not defined
+#To correct:true得是个int/float型的变量 或者 改成True
+(6)
+a=1
+if(a=1){
+print '正确'
+}else{
+print '错误'
+}
+#To correct:
+#--------------------
+#coding=utf-8
+a=1
+if(a==1):
+    print '正确'
 else:
-	print 'this is last'
+    print '错误'
+#---------------------
+输出正确
+(7)
+a=5
+if a != 7 :
+    a+=1
+print a
+#输出6
+(8)
+A=（1，2，3，4，5）
+A.append('6')
+print A
+#error 元组没有append 把()换成[]
+#输出[1, 2, 3, 4, 5, '6']
+(9)
+a='ABC'
+a[2]='B'
+#error
+
+a='1'
+b=2
+a+b=？
+#应该怎么运算？
+#无法直接运算，需要更改其中一个变量类型
+
+a='1'
+b='2'
+a+b=？
+#Result:'12'
 ```
-##第七题，python中，什么情况下为假。（不同数据类型下为假）
-布尔型 false 就是假；
-整形 浮点型 0 是假；
-字符串、元组、列表等……**内容为空** 时表示假
+**四、请写出如何判断'AB123542132547231'这段字符串里有多少个'1'存在，判断7的位置
+判断开头是否是AB并说出返回的是一个什么值(数据类型)，该数据类型的值(数值)为多少**
 ```python
-#!/user/bin/env python
-a = 0
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = 1
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = []
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = [1]
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = False
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = 0.0
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
-
-a = ''
-if a:
-	print 'true!'
-elif not a:
-	print 'False!'
+#coding:utf-8
+a='AB123542132547231'
+print a.count('1')
+print a.find('7')
+print a.startswith('AB')
+print type(a.startswith('AB'))
 ```
-```shell
+**五：请把该字符串转换为列表 '我爱暗影'**
+```python
+#!/usr/bin/env python
+#coding:utf-8
+a=u'我爱暗影'
+a=a.replace('',' ')
+a=a.strip()
+print a
+b=a.split(' ')
+print b
+```
+
+**六：请把该字符串变为大写 'abcdef'**
+```python
+#!/usr/bin/env python
+a='abcdef'
+b = a.upper()
+print b
+```
+
+**七:定义一个值含A的列表
+(1)向里面添加一个值
+(2)删除最后一个值
+(4)删除值为A
+(5)删除第二个值
+(6)循环此列表分别打出此列表的索引和值**
+```python
+#!/usr/bin/env python
+alist = ['1','a','A','b','2']
+print alist
+alist.append('c')
+print alist
+alist.pop()
+print alist
+alist.remove('A')
+print alist
+del alist[1]
+print alist
+x = 0
+for a in alist:
+	print 'index:%d\tvalue:%s' % (x,a)
+	x+=1
+```
+
+**八：用2种方法写出a=[1,2,3,4,5]的倒序**
+```python
+a.reverse()
+a[::-1]
+```
+(1)a[-3]的值是多少
+```python
+3
+```
+(2)用切片取出234的值
+```python
+a[1:4]
+```
+(3)a[1:5:2]的值是多少1,5,2分别是什么
+```python
+[2,4] a[x:y:z] 输出x、y之间的元素，间隔z
+``` 
+(4)a = 'abcd' 用2个方法取出字母d
+```python
+a[len(a)-1]
+a[-1]
+```
+**九:运行下面结果并分析**
+```
+(1)
+a=['a','b','c','d','e'] 
+for x in range(len(a)): #从 0到len(a)-1，即0 1 2 3 4
+    print x
+#Reult:
+0
+1
+2
+3
+4
+(2)
+a=1
+while 1:
+    a+=1
+    if a==3 #need : here
+        break
+    print a
+To correct Result:
+2
+(3)
+bool("521" == 521)的结果是什么
+False
+
+此循环正确吗 为什么?
+a=1
+while a:
+    print 1
+#Error 无限循环 a永远为真
+```
+**十:分析下列结果**
+```python
+a=[1,2,3,4,5,6,7,8,9,10]
+for x in a: #从前到后遍历
+    print a.pop() #弹出最后一个应返回该值
+    if x==4:
+        print '我爱暗影'
 #Result
-False!
-true!
-False!
-true!
-False!
-False!
-False!
+10
+9
+8
+7
+我爱暗影
+6
 ```
-##第八题，元组和列表的有哪些共同点，那些不同点
-
-元组：使用 () ，元组的值无法改变，无法创建单一元素的元组。
-列表：使用 [] ，列表的值是可以改变的，可以创建单一元素列表。
-  [1]: http://www.coffin5257.com

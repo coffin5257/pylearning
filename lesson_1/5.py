@@ -1,19 +1,8 @@
-#!/user/bin/env python
-port = []
-print port
-port.append(22)
-print port
-port.append(80)
-print port
-port.append(23)
-print port
-port.append(8080)
-print port
-port.append(139)
-print port
-port.append(445)
-print port
-port.append(3389)
-print port
-port.sort()
-print port
+#!/usr/bin/env python
+#coding:utf-8
+a=u'我爱暗影'
+a=a.replace('',' ')
+a=a.strip()
+print a
+b=a.split(' ')
+print b
