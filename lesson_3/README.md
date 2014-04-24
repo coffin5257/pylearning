@@ -58,6 +58,9 @@ ainfo.pop('ac')
 del ainfo['ac']
 ```
 
+
+
+
 #3天内的集训题
 
 **1、列表**
@@ -121,10 +124,9 @@ print ['the content %s'% x for x in b[:2]]
 ```python
 for x in range(len(b)):
 	b[x]+=2
-print 
+print b
 ```
-**习题4：用range方法和列表推导的方法生成列表：**
-``[11,22,33]
+**习题4：用range方法和列表推导的方法生成列表：**``[11,22,33]``
 ```python
 #!/usr/bin/env python
 a = []
