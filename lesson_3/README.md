@@ -12,27 +12,27 @@
  ```
 
  **2、纠错**
- ```python
+```python
  b=（'A':1,'B':2） #()改为{}
  a=｛'A'=>1,'B'=>2｝ # => 改为 :
  a={1,'B':2} # 1 缺少一个键值
  a={'A','B'} # 键A B 需要有初始值
  a={'A':1,'B':2}
  printa[1] #按键值来索引 应该是print a['A']
-
- **3、给一个元组:** `a = ('name','age','height')`
+```
+**3、给一个元组:** `a = ('name','age','height')`
 ```python
 bdict = {}.fromkeys(a)
 ```
 
  **4、创建两个字典，合并两个字典**
- ```python
+```python
 adict = dict(name='coffin',age=99)
 bdict = dict(sex='male',int='hack')
 cdict = dict(adict.items() + bdict.items())
- ```
-**5、已知字典：** ainfo = {'ab':'liming','ac':20}
-(1)使用2个方法，输出：ainfo = {'ab':'liming','ac':20,'sex':'man','age':20}
+```
+**5、已知字典：** `ainfo = {'ab':'liming','ac':20}`
+(1)使用2个方法，输出：`ainfo = {'ab':'liming','ac':20,'sex':'man','age':20}`
 ```python
 方法一：
 ainfo['sex'] = 'man'
